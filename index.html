@@ -1,67 +1,157 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Ahmet Yıldız – Portfolio</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <title>Ahmet Yıldız — Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Python/ML, Unity games (QUAD, Mini Roguelike), and aerospace simulations portfolio by Ahmet Yıldız." />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Ahmet Yıldız — Portfolio" />
+  <meta property="og:description" content="AI/ML, Unity games, and optimization." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://AhmetYldz39.github.io" />
+  <link rel="icon" href="favicon.ico" />
   <style>
-    body{font-family:Arial, sans-serif; margin:0; background:#f6f7f9; color:#222}
-    header{background:#111; color:#fff; padding:28px 16px; text-align:center}
-    main{max-width:900px; margin:24px auto; padding:0 16px}
-    h2{border-bottom:2px solid #e6e7ea; padding-bottom:6px}
-    .card{background:#fff; border-radius:10px; padding:16px; margin:16px 0}
-    .tags{font-size:0.9em; color:#666}
-    a{color:#0b69c7; text-decoration:none} a:hover{text-decoration:underline}
+    :root{
+      --bg:#f6f7f9; --card:#fff; --text:#212529; --muted:#5f6b7a; --accent:#0b69c7; --line:#e6e7ea;
+    }
+    [data-theme="dark"]{
+      --bg:#0d1117; --card:#0f141b; --text:#e6edf3; --muted:#9aa7b5; --accent:#58a6ff; --line:#1f232a;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Arial}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:color-mix(in oklab, var(--bg) 85%, transparent);border-bottom:1px solid var(--line);z-index:10}
+    .wrap{max-width:980px;margin:auto;padding:0 16px}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+    .nav a.brand{font-weight:700}
+    .nav .links a{margin-left:16px}
+    .hero{padding:56px 0 32px}
+    .hero h1{font-size:34px;line-height:1.2;margin:0 0 8px}
+    .hero p{margin:0 0 12px;color:var(--muted)}
+    .hero .actions a{display:inline-block;margin-right:10px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+    section{padding:28px 0}
+    h2{font-size:22px;margin:0 0 12px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{margin:0 0 8px;color:var(--muted)}
+    .tags{font-size:12px;color:var(--muted)}
+    footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+    .toggle{cursor:pointer;border:1px solid var(--line);border-radius:10px;padding:6px 10px;background:var(--card)}
+    .chips{margin:8px 0 0}
+    .chips span{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 10px;margin:4px 6px 0 0;font-size:12px;background:var(--card)}
+    .thumb{width:100%;height:140px;border-radius:8px;object-fit:cover;border:1px solid var(--line);background:#ccc}
+    @media (max-width:640px){ .hero h1{font-size:26px} }
   </style>
 </head>
 <body>
+
 <header>
-  <h1>Ahmet Yıldız</h1>
-  <p>Software Engineer · Game Developer · Aerospace</p>
-  <p><a href="mailto:ahmetyldz39@outlook.com">ahmetyldz39@outlook.com</a> ·
-     <a href="https://github.com/AhmetYldz39">GitHub</a> ·
-     <a href="https://www.linkedin.com/in/ahmet-yıldız-9505721a0/">LinkedIn</a></p>
+  <div class="wrap nav">
+    <a class="brand" href="#">Ahmet Yıldız</a>
+    <div class="links">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button id="theme" class="toggle" aria-label="Toggle theme">🌙</button>
+    </div>
+  </div>
 </header>
-<main>
-  <h2>Projects</h2>
+  
+<main class="wrap">
+  <!-- HERO / WELCOME -->
+  <section class="hero" id="home">
+    <h1>Software Engineer • Machine Learning • Unity/Gameplay</h1>
+    <p>Blending AI, simulation, and game development to build practical, high-impact systems and interactive experiences.</p>
+    <div class="actions">
+      <a href="#projects">View Projects</a>
+      <a href="https://github.com/AhmetYldz39/AhmetYldz39.github.io/blob/main/CV_Software_Engineering.pdf">Download CV</a> <!-- cv_ahmet_yildiz.pdf dosyasını reponun köküne ekle -->
+      <a href="mailto:ahmetstar150@gmail.com">Contact</a>
+    </div>
+    <div class="chips">
+      <span>Python</span><span>ML / RL</span><span>Unity (C#)</span><span>MATLAB/Simulink</span><span>SQL</span>
+    </div>
+  </section>
 
-  <div class="card">
-    <h3>MLAT-R Drone Wildfire Detection</h3>
-    <p>Multi-drone simulation for wildfire detection & response using MLAT-R.</p>
-    <p class="tags">Python</p>
-    <a href="https://github.com/AhmetYldz39/MLAT-R">GitHub</a>
-  </div>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <!-- QUAD -->
+      <article class="card">
+        <img class="thumb" src="quad.png" alt="QUAD game screenshot" />
+        <h3>QUAD — 3D Drone Defense</h3>
+        <p>Defend your island in QUAD, a fast-paced drone defense game! Repel incoming enemy waves, upgrade your base, and master the skies.</p>
+        <p class="tags">Unity · C# · NavMesh · Object Pooling</p>
+        <a href="https://github.com/AhmetYldz39/quadgame">GitHub</a>
+      </article>
 
-  <div class="card">
-    <h3>ExKMC MoviLens1M Dataset</h3>
-    <p>ExKMC is an interpretable clustering algorithm that combines K-Means with rule-based explanations, enabling more transparent and understandable machine learning models.</p>
-    <p class="tags">Python</p>
-    <a href="https://github.com/AhmetYldz39/ExKMC">GitHub</a>
-  </div>
+      <!-- Mini Roguelike -->
+      <article class="card">
+        <img class="thumb" src="roguelike.png" alt="Mini Roguelike screenshot" />
+        <h3>Mini Roguelike Labyrinth</h3>
+        <p>Navigate through interconnected rooms, and uncover secrets in a fast and fun dungeon adventure.</p>
+        <p class="tags">Unity · C# · Tile Paletting</p>
+        <a href="https://github.com/AhmetYldz39/MiniRoguelikeLabirent">GitHub</a>
+      </article>
 
-  <div class="card">
-    <h3>QUAD 3D Drone Defense Game</h3>
-    <p>Defend your island in QUAD, a fast-paced 3D drone defense game! Repel incoming enemy waves, protect your base, and master the skies.</p>
-    <p class="tags">Unity · C#</p>
-    <a href="https://github.com/AhmetYldz39/quadgame">GitHub</a>
-  </div>
+      <!-- MLAT-R -->
+      <article class="card">
+        <img class="thumb" src="mlatr.png" alt="MLAT-R wildfire sim screenshot" />
+        <h3>MLAT-R Wildfire Detection</h3>
+        <p>Python multi-drone simulation for wildfire detection & response using the MLAT-R algorithm.</p>
+        <p class="tags">Python</p>
+        <a href="https://github.com/AhmetYldz39/MLAT-R">GitHub</a>
+      </article>
 
-  <div class="card">
-    <h3>Mini Roguelike Labyrinth Game</h3>
-    <p>Navigate through interconnected rooms, and uncover secrets in Mini Roguelike Labyrinth – a fast and fun dungeon adventure.</p>
-    <p class="tags">Unity · C#</p>
-    <a href="https://github.com/AhmetYldz39/MiniRoguelikeLabirent">GitHub</a>
-  </div>
+      <!-- ExKMC -->
+      <article class="card">
+        <img class="thumb" src="exkmc.png" alt="ExKMC project cover" />
+        <h3>ExKMC — Explainable Clustering - MoviLens1M Dataset</h3>
+        <p>ExKMC enhances K-Means with rule-based explanations, making AI decisions more transparent and user-friendly.</p>
+        <p class="tags">Python · scikit-learn · Pandas</p>
+        <a href="https://github.com/AhmetYldz39/ExKMC">GitHub</a>
+      </article>
 
-  <div class="card">
-    <h3>Policy Iteration</h3>
-    <p>Model-based policy iteration to find global minima or maxima altitude on 3D terrain.</p>
-    <p class="tags">MATLAB · Python</p>
-    <a href="https://github.com/AhmetYldz39/policy-iteration-matlab">GitHub</a>
-  </div>
+      <!-- Policy Iteration -->
+      <article class="card">
+        <img class="thumb" src="policy.png" alt="Policy iteration cover" />
+        <h3>Policy Iteration (Terrain)</h3>
+        <p>Model-based policy iteration to find global minima on 3D terrain; groundwork for visualization and agent path animation.</p>
+        <p class="tags">MATLAB . RL</p>
+        <a href="https://github.com/AhmetYldz39/policy-iteration-matlab">GitHub</a>
+      </article>
+    </div>
+  </section>
 
-  <h2>About</h2>
-  <p>Blending software engineering, AI research, and game development to create innovative and impactful projects, from explainable machine learning models to immersive gameplay experiences.</p>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About</h2>
+    <p>Blending software engineering, AI research, and game development to create practical, high-impact projects — from explainable ML models to immersive gameplay and algorithm simulations. Currently pursuing an M.Sc. in Information Technologies at Istanbul Technical University.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:ahmetstar150@gmail.com">ahmetstar150@gmail.com</a> · LinkedIn:
+      <a href="https://www.linkedin.com/in/ahmet-yıldız-9505721a0/">linkedin.com/in/ahmet-yıldız-9505721a0</a> · GitHub:
+      <a href="https://github.com/AhmetYldz39">github.com/AhmetYldz39</a></p>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">© <span id="y"></span> Ahmet Yıldız — Built with GitHub Pages</div>
+</footer>
+
+<script>
+  // Year + theme toggle
+  document.getElementById('y').textContent = new Date().getFullYear();
+  const btn = document.getElementById('theme');
+  const set = t => document.documentElement.setAttribute('data-theme', t);
+  const saved = localStorage.getItem('theme'); if(saved) set(saved);
+  btn.addEventListener('click', () => { const cur = document.documentElement.getAttribute('data-theme')||'light';
+    const nxt = cur==='dark'?'light':'dark'; set(nxt); localStorage.setItem('theme', nxt); });
+</script>
 </body>
 </html>
